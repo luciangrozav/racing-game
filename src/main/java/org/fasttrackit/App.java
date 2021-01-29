@@ -19,6 +19,19 @@ public class App
         carReference.doorCount = 1;
         carReference.color = "Red";
 
+        Engine engine1 = new Engine();
+        engine1.manufacturer = "Ferrari";
+        engine1.capacity = 5000;
+
+        carReference.engine= engine1; // variabila engine este definita in Car.java
+
+     System.out.println("Engine1 capacity " + engine1.capacity);
+     System.out.println("Car engine capacity " + carReference.engine.capacity);
+
+     engine1.capacity = 6000;
+
+     System.out.println("Car engine capacity updated: " + carReference.engine.capacity); // modificarile se intampla in acelasi loc din memorie
+
         //concatenation
         System.out.println("Properties of car " + carReference.name);
         System.out.println("Maximum speed is: " + carReference.maxSpeed);
@@ -34,6 +47,9 @@ public class App
         car2.name = "Renault";
         car2.fuellevel = 70;
         car2.totalTravelDistance = 100;
+
+        car2.engine = new Engine();
+        car2.engine.capacity = 2000;
 
         System.out.println("Properties of car " + car2.name);
         System.out.println("Maximum speed is: " + car2.maxSpeed);
