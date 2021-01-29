@@ -1,19 +1,14 @@
 package org.fasttrackit;
 
-public class Car {
-    String name;
+// "is-a" relantionship (inheritance)
+public class Car extends AutoVehicle {  // relatia de mostenire; clasa AutoVehicle este clasa parinte a lui Car
 
-    double fuellevel;
-    double mileage;
-    double totalTravelDistance;
-    double maxSpeed;
 
     int doorCount;
-    boolean damaged;
-    String color;
 
-    // has-a relationship (aggregation)
 
-    Engine engine; // variabila- engine
+    // "has-a" relationship (aggregation)
+
+
 
 }
