@@ -14,12 +14,12 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
     public double accelerate (double speed, double durationInHours) {  // accelerate= metoda -> reprezinta o actiune, un verb-accelerare; speed, durationInHours- parametrii
 
         // Ferrari is accelerating with 100 Km/h for 1h
-        System.out.println(name + " is accelerating with" + speed + " Km/h for " + durationInHours + " hours");
+        System.out.println(name + " is accelerating with " + speed + " Km/h for " + durationInHours + " hours");
         double distance = speed * durationInHours;  // distance- variabila locala, exista doar intre acoladele lui 'accelerate'
 
         totalTravelDistance = totalTravelDistance + distance; // totalTravelDistance += distance;
 
-        System.out.println("Total traveled distance for vehicle " + name + " : " + totalTravelDistance);
+        System.out.println("Total traveled distance for vehicle " + name + " : " + totalTravelDistance + " Km");
 
         double usedFuel = distance * mileage / 100;
 
