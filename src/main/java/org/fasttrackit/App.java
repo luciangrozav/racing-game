@@ -60,26 +60,36 @@ public class App
         System.out.println("Door count: " + car2.doorCount);
         System.out.println("Color: " + car2.color);
 
-     System.out.println("Initial name for car1 " + carReference.name);
-        carReference.name = "Audi";
-     System.out.println("Changed name for car1 " + carReference.name);
+        double distanceforCar1 = carReference.accelerate(60, 1);
 
-     carReference = new Car();
-     carReference.name = "BMW";
-     System.out.println("New name for car1 " + carReference.name);
+        double distanceforCar2 = car2.accelerate(100, 1);
+
+        if (distanceforCar1 > distanceforCar1) {
+            System.out.println("Longest distance was covered by: " + carReference.name);
+        }
 
 
-     carReference = car2;
-     System.out.println("Name of car referenced from 2 variables; carReference " + carReference.name);
-     System.out.println("Name of car referenced from 2 variables; car2 " + car2.name);
 
-     car2.name = "Dacia";
-
-     System.out.println("Name of car referenced from 2 variables; carReference " + carReference.name);
-     System.out.println("Name of car referenced from 2 variables; car2 " + car2.name);
-
-     car2 = null;
-
-     System.out.println(carReference.name);
+//     System.out.println("Initial name for car1 " + carReference.name);
+//        carReference.name = "Audi";
+//     System.out.println("Changed name for car1 " + carReference.name);
+//
+//     carReference = new Car();
+//     carReference.name = "BMW";
+//     System.out.println("New name for car1 " + carReference.name);
+//
+//
+//     carReference = car2;
+//     System.out.println("Name of car referenced from 2 variables; carReference " + carReference.name);
+//     System.out.println("Name of car referenced from 2 variables; car2 " + car2.name);
+//
+//     car2.name = "Dacia";
+//
+//     System.out.println("Name of car referenced from 2 variables; carReference " + carReference.name);
+//     System.out.println("Name of car referenced from 2 variables; car2 " + car2.name);
+//
+//     car2 = null;
+//
+//     System.out.println(carReference.name);
     }
 }

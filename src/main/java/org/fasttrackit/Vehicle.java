@@ -26,7 +26,7 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
         fuellevel -= usedFuel;
         System.out.println("Remaining fuel for vehicle " + name + " : " + fuellevel);
 
-        return distance;
+        return distance;  //metoda accelerate returneaza valoarea distance (valoare double)
 
     }
 
