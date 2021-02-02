@@ -2,6 +2,6 @@ package org.fasttrackit;
 
 public class AutoVehicle extends Vehicle{
 
-    Engine engine; // variabila- engine
+    Engine engine; // clasa- Engine (trebuie sa existe Engine.java)  ;  variabila- engine
 
 }

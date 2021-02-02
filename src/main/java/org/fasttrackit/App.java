@@ -19,11 +19,11 @@ public class App
         carReference.doorCount = 1;
         carReference.color = "Red";
 
-        Engine engine1 = new Engine();
+        Engine engine1 = new Engine();  // Lucrezi cu clasa Engine; engine1 variabila clasei Engine (Engine.java)
         engine1.manufacturer = "Ferrari";
         engine1.capacity = 5000;
 
-        carReference.engine= engine1; // variabila engine este definita in Car.java
+        carReference.engine= engine1; // variabila engine este definita in clasa AutoVehicle care este parintele clasei Car (Car si AutoVehicle au acelasi sange);
 
      System.out.println("Engine1 capacity " + engine1.capacity);
      System.out.println("Car engine capacity " + carReference.engine.capacity);
