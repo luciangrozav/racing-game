@@ -43,7 +43,7 @@ public class App
         System.out.println("Color: " + carReference.color);
         System.out.println(carReference);
 
-        Car car2 = new Car(); // o noua variabila
+        Car car2 = new Car(); // o noua variabila, a doua masina
         car2.name = "Renault";
         car2.fuellevel = 70;
         car2.totalTravelDistance = 100;
@@ -64,9 +64,9 @@ public class App
 
         double distanceforCar2 = car2.accelerate(100, 1);
 
-        if (distanceforCar1 > distanceforCar1) {
+        if (distanceforCar1 > distanceforCar2) {
             System.out.println("Longest distance was covered by: " + carReference.name);
-        }
+        } else System.out.println("Longest distance was covered by: " + car2.name);
 
 
 
