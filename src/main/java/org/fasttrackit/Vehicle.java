@@ -11,7 +11,7 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
     boolean damaged;
     String color;
 
-    public double accelerate (double speed, double durationInHours) {  // reprezinta o actiune, un verb-accelerare; speed, durationInHours- parametrii
+    public double accelerate (double speed, double durationInHours) {  // accelerate= metoda -> reprezinta o actiune, un verb-accelerare; speed, durationInHours- parametrii
 
         // Ferrari is accelerating with 100 Km/h for 1h
         System.out.println(name + " is accelerating with" + speed + " Km/h for " + durationInHours + " hours");
