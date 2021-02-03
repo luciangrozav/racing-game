@@ -74,7 +74,6 @@ public class App
 
         System.out.println("Engine manufacturer before repair: " + carReference.engine.manufacturer);
     Mechanic mechanic = new Mechanic();
-;
     mechanic.repair(carReference);
 
         System.out.println("Engine manufacturer after repair: " + carReference.engine.manufacturer); // in clasa Mechanic- ii s-a atribuit lui Autovehicle un nou motor- deci va avea o valoare random = null; (regula)
