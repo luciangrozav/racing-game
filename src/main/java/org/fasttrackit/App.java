@@ -8,8 +8,15 @@ public class App
 {
     public static void main( String[] args )
     {
-       Car carReference = new Car(); // prima variabila declarata
+        Engine autoVehicleEngine = new Engine();  // ai declarat 1 engine
+        autoVehicleEngine.manufacturer = "Vw";
+        AutoVehicle autoVehicle = new AutoVehicle(autoVehicleEngine); // de acum oricarui Autovehicul ii va fi obligatoriu sa i se instantieze un motor
 
+        Engine engine1 = new Engine();  // ai declarat alt engine ; cele 2 engine le declari in clasele AutoVehicle si Car
+        engine1.manufacturer = "Ferrari";
+        engine1.capacity = 5000;
+
+        Car carReference = new Car(engine1); // prima variabila declarata ; in paranteze introduci variabila engine declarata mai sus
        carReference.name = "Ferrari";    // Date FERRARI
        carReference.maxSpeed=300;
         carReference.fuellevel=60;
@@ -19,11 +26,6 @@ public class App
         carReference.doorCount = 1;
         carReference.color = "Red";
 
-        Engine engine1 = new Engine();  // Lucrezi cu clasa Engine; engine1 variabila clasei Engine (Engine.java)
-        engine1.manufacturer = "Ferrari";
-        engine1.capacity = 5000;
-
-        carReference.engine= engine1; // variabila engine este definita in clasa AutoVehicle care este parintele clasei Car (Car si AutoVehicle au acelasi sange);
 
      System.out.println("Engine1 capacity " + engine1.capacity);
      System.out.println("Car engine capacity " + carReference.engine.capacity);
@@ -43,14 +45,13 @@ public class App
         System.out.println("Color: " + carReference.color);
         System.out.println(carReference);
 
-        Car car2 = new Car(); // Date RENAULT
+        Engine engine2 = new Engine();
+        Car car2 = new Car(engine2); // Date RENAULT
         car2.name = "Renault";
         car2.maxSpeed = 300;
         car2.mileage = 10;
         car2.fuellevel = 70;
         car2.totalTravelDistance = 100;
-
-        car2.engine = new Engine();
         car2.engine.capacity = 2000;
 
         System.out.println("Properties of car " + car2.name);
@@ -63,6 +64,7 @@ public class App
         System.out.println("Color: " + car2.color);
 
         System.out.println(carReference.name + ":");
+
         double distanceforCar1 = carReference.accelerate(60, 1); // Ferrari are viteza- 60  ; !! metoda accelerate returneaza o distanta, de aceea ii atribui o distanta
 
         System.out.println(car2.name + ":");

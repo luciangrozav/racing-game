@@ -11,6 +11,13 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
     boolean damaged;  // 2 valori- true, false- ori e stricat ori merge;
     String color;
 
+   /* public Vehicle(String name, double fuellevel, double mileage, double maxSpeed) {    // exemplu de alt constructor;
+        this.name = name;                                                                 // Si in Autovehicle si Car trebuie definiti dupa, pt ca Vehicle este stramos
+        this.fuellevel = fuellevel;
+        this.mileage = mileage;
+        this.maxSpeed = maxSpeed;
+    } */
+
     public double accelerate (double speed, double durationInHours) {  // accelerate= metoda -> reprezinta o actiune, un verb-accelerare; speed, durationInHours- parametrii
 
         if (fuellevel <= 0 || damaged) { // se inteteste povestea aplicatiei, ii creste complexitatea, conditiile
