@@ -7,6 +7,9 @@ public class App
        Game game = new Game();
         game.start();
 
+        Vehicle vehicle1 = new Vehicle();
+        System.out.println("Date: " + vehicle1.manufacturingDate);
+
        /*Exemplu variabile statice
         Vehicle vehicle1 = new Vehicle();
         vehicle1.name = "Dacia";

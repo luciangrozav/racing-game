@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.time.LocalDate;
+
 public class Vehicle { //Vehicle este stramos de-al lui Car
 
     static int totalVehicleCount;  // variabila de clasa / variabila statica
@@ -12,6 +14,8 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
 
     boolean damaged;  // 2 valori- true, false- ori e stricat ori merge;
     String color;
+
+    LocalDate manufacturingDate = LocalDate.now();
 
     public Vehicle() {
         totalVehicleCount++;

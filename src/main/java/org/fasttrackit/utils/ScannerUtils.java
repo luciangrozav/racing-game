@@ -6,16 +6,16 @@ public class ScannerUtils {
 
 
 
-        Scanner scanner = new Scanner(System.in);
+        static final Scanner SCANNER = new Scanner(System.in);
 
-        public int nextIntAndMoveToNextLine ()
+        public static int nextIntAndMoveToNextLine ()
         {
-            int integer = scanner.nextInt();
-            scanner.nextLine();
+            int integer = SCANNER.nextInt();
+            SCANNER.nextLine();
             return integer;
         }
-        public String nextLine ()
+        public static String nextLine ()
         {
-            return scanner.nextLine();
+            return SCANNER.nextLine();
         }
     }
