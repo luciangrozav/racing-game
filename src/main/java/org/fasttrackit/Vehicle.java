@@ -2,6 +2,8 @@ package org.fasttrackit;
 
 public class Vehicle { //Vehicle este stramos de-al lui Car
 
+    static int totalVehicleCount;  // variabila de clasa / variabila statica
+
     String name;
     double fuellevel;
     double mileage;
@@ -11,7 +13,11 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
     boolean damaged;  // 2 valori- true, false- ori e stricat ori merge;
     String color;
 
-   /* public Vehicle(String name, double fuellevel, double mileage, double maxSpeed) {    // exemplu de alt constructor;
+    public Vehicle() {
+        totalVehicleCount++;
+    }
+
+    /* public Vehicle(String name, double fuellevel, double mileage, double maxSpeed) {    // exemplu de alt constructor;
         this.name = name;                                                                 // Si in Autovehicle si Car trebuie definiti dupa, pt ca Vehicle este stramos
         this.fuellevel = fuellevel;
         this.mileage = mileage;

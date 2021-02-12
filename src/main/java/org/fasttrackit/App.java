@@ -1,14 +1,29 @@
 package org.fasttrackit;
 
-/**
-
- *
- */
 public class App
 {
     public static void main( String[] args )
     {
-        Engine autoVehicleEngine = new Engine();  // ai declarat 1 engine
+       Game game = new Game();
+        game.start();
+
+       /*Exemplu variabile statice
+        Vehicle vehicle1 = new Vehicle();
+        vehicle1.name = "Dacia";
+        vehicle1.totalVehicleCount = 1;
+
+        Vehicle vehicle2 = new Vehicle();
+        Vehicle vehicle3 = new Vehicle();
+
+        vehicle2.name = "Lada";
+        vehicle2.totalVehicleCount = 3;
+        System.out.println("Total count from Vehicle " + vehicle1.name + " : " + vehicle1.totalVehicleCount);
+
+        System.out.println("Total count from Vehicle " + vehicle2.name + " : " + vehicle2.totalVehicleCount);
+        System.out.println("Total count from Vehicle class " + Vehicle.totalVehicleCount); */
+
+
+        /* Engine autoVehicleEngine = new Engine();  // ai declarat 1 engine
         autoVehicleEngine.manufacturer = "Vw";
         AutoVehicle autoVehicle = new AutoVehicle(autoVehicleEngine); // de acum oricarui Autovehicul ii va fi obligatoriu sa i se instantieze un motor
 
@@ -16,7 +31,9 @@ public class App
         engine1.manufacturer = "Ferrari";
         engine1.capacity = 5000;
 
+
         Car carReference = new Car(engine1); // prima variabila declarata ; in paranteze introduci variabila engine declarata mai sus
+
        carReference.name = "Ferrari";    // Date FERRARI
        carReference.maxSpeed=300;
         carReference.fuellevel=60;
@@ -76,9 +93,9 @@ public class App
 
         System.out.println("Engine manufacturer before repair: " + carReference.engine.manufacturer);
     Mechanic mechanic = new Mechanic();
-    mechanic.repair(carReference);
+    mechanic.repair(carReference); */
 
-        System.out.println("Engine manufacturer after repair: " + carReference.engine.manufacturer); // in clasa Mechanic- ii s-a atribuit lui Autovehicle un nou motor- deci va avea o valoare random = null; (regula)
+       // System.out.println("Engine manufacturer after repair: " + carReference.engine.manufacturer); // in clasa Mechanic- ii s-a atribuit lui Autovehicle un nou motor- deci va avea o valoare random = null; (regula)
 //     System.out.println("Initial name for car1 " + carReference.name);
 //        carReference.name = "Audi";
 //     System.out.println("Changed name for car1 " + carReference.name);
