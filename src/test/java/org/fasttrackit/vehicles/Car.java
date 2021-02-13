@@ -1,6 +1,8 @@
-package org.fasttrackit;
+package org.fasttrackit.vehicles;
 
 // "is-a" relantionship (inheritance)
+
+import org.fasttrackit.Engine;
 
 public class Car extends AutoVehicle {  // relatia de mostenire; clasa AutoVehicle este clasa parinte a lui Car
 

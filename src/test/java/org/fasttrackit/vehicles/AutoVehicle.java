@@ -1,4 +1,6 @@
-package org.fasttrackit;
+package org.fasttrackit.vehicles;
+
+import org.fasttrackit.Engine;
 
 public class AutoVehicle extends Vehicle{
 

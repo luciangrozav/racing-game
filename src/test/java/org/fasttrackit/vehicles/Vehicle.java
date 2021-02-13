@@ -1,4 +1,4 @@
-package org.fasttrackit;
+package org.fasttrackit.vehicles;
 
 import java.time.LocalDate;
 
@@ -9,7 +9,7 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
    private String name;
    private double fuellevel;
    private double mileage;
-   private double totalTravelDistance;
+   protected double totalTravelDistance;
    private double maxSpeed;
 
    private boolean damaged;  // 2 valori- true, false- ori e stricat ori merge;
