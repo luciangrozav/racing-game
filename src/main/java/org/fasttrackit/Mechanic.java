@@ -6,8 +6,10 @@ public class Mechanic {
         // in Autovehicle este clasa Engine; astfel spunem ca mecanicul poate schimba/repara motorul
         // de aceea ne folosim de clasa Autovehicle in declararea metodei
 
-        autoVehicle.engine = new Engine(); // lui autovehicle ii s-a atribuit un nou motor
-        autoVehicle.damaged = false;  // damaged este o proprietate mostenita din clasa Vehicle
+        autoVehicle.setEngine(new Engine()); // lui autovehicle ii s-a atribuit un nou motor
+        autoVehicle.setDamaged(false);  // damaged este o proprietate mostenita din clasa Vehicle
+
+        autoVehicle.setTotalTravelDistance(autoVehicle.getTotalTravelDistance() - 100);
 
 
 

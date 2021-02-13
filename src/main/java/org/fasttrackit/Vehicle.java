@@ -4,18 +4,18 @@ import java.time.LocalDate;
 
 public class Vehicle { //Vehicle este stramos de-al lui Car
 
-    static int totalVehicleCount;  // variabila de clasa / variabila statica
+   private static int totalVehicleCount;  // variabila de clasa / variabila statica
 
-    String name;
-    double fuellevel;
-    double mileage;
-    double totalTravelDistance;
-    double maxSpeed;
+   private String name;
+   private double fuellevel;
+   private double mileage;
+   private double totalTravelDistance;
+   private double maxSpeed;
 
-    boolean damaged;  // 2 valori- true, false- ori e stricat ori merge;
-    String color;
+   private boolean damaged;  // 2 valori- true, false- ori e stricat ori merge;
+   private String color;
 
-    LocalDate manufacturingDate = LocalDate.now();
+    private LocalDate manufacturingDate = LocalDate.now();
 
     public Vehicle() {
         totalVehicleCount++;
@@ -65,4 +65,73 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
 
     }
 
+    public void setName(String name)
+    {
+    this.name = name.trim(); // sterge spatiile de la inceput si sfarsit
+    }
+    public String getName()
+    {
+        return name;
+    }
+
+    public double getFuellevel() {
+        return fuellevel;
+    }
+
+    public void setFuellevel(double fuellevel) {
+        this.fuellevel = fuellevel;
+    }
+
+    public double getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
+    public double getTotalTravelDistance() {
+        return totalTravelDistance;
+    }
+
+    public void setTotalTravelDistance(double totalTravelDistance) {
+        this.totalTravelDistance = totalTravelDistance;
+    }
+
+    public double getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(double maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public boolean isDamaged() {
+        return damaged;
+    }
+
+    public void setDamaged(boolean damaged) {
+        this.damaged = damaged;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public LocalDate getManufacturingDate() {
+        return manufacturingDate;
+    }
+
+    public void setManufacturingDate(LocalDate manufacturingDate) {
+        this.manufacturingDate = manufacturingDate;
+    }
+
+    // read-only property
+    public static int getTotalVehicleCount() {
+        return totalVehicleCount;
+    }
 }

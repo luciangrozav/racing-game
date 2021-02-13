@@ -2,7 +2,7 @@ package org.fasttrackit;
 
 public class AutoVehicle extends Vehicle{
 
-    Engine engine; // clasa- Engine (trebuie sa existe Engine.java)  ;  variabila- engine
+   private Engine engine; // clasa- Engine (trebuie sa existe Engine.java)  ;  variabila- engine
 
     public AutoVehicle (Engine engine)  // Constructor
     {
@@ -10,4 +10,11 @@ public class AutoVehicle extends Vehicle{
 
     }
 
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
 }
