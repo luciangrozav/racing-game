@@ -1,4 +1,4 @@
-package org.fasttrackit.vehicles;
+package org.fasttrackit.vehicule;
 
 import java.time.LocalDate;
 
@@ -27,6 +27,11 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
         this.mileage = mileage;
         this.maxSpeed = maxSpeed;
     } */
+
+    public double accelerate (double speed)
+    {
+        return accelerate(speed, 1);
+    }
 
     public double accelerate (double speed, double durationInHours) {  // accelerate= metoda -> reprezinta o actiune, un verb-accelerare; speed, durationInHours- parametrii
 

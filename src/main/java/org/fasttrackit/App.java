@@ -7,6 +7,17 @@ public class App
        Game game = new Game();
         game.start();
 
+        // invoking overloading methods and constructors
+//        Engine engine = new Engine();
+//        engine.setManufacturer("Renault");
+//        engine.setCapacity(2000);
+//
+//        AutoVehicle autovehicle1 = new AutoVehicle(engine);
+//
+//        new Car();
+//
+//        autovehicle1.accelerate (100);
+//        autovehicle1.accelerate (100,3);
 
 
 //        Vehicle vehicle1 = new Vehicle();
@@ -112,4 +123,5 @@ public class App
 //     System.out.println("Name of car referenced from 2 variables; car2 " + car2.getName());
 
     }
+
 }
