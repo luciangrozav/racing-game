@@ -1,5 +1,7 @@
 package org.fasttrackit.vehicule;
 
+import org.fasttrackit.Engine;
+
 import java.time.LocalDate;
 
 public class Vehicle { //Vehicle este stramos de-al lui Car
@@ -19,6 +21,10 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
 
     public Vehicle() {
         totalVehicleCount++;
+    }
+
+    public Vehicle(Engine engine) {
+
     }
 
     /* public Vehicle(String name, double fuellevel, double mileage, double maxSpeed) {    // exemplu de alt constructor;
@@ -138,5 +144,19 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
     // read-only property
     public static int getTotalVehicleCount() {
         return totalVehicleCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", fuellevel=" + fuellevel +
+                ", mileage=" + mileage +
+                ", totalTravelDistance=" + totalTravelDistance +
+                ", maxSpeed=" + maxSpeed +
+                ", damaged=" + damaged +
+                ", color='" + color + '\'' +
+                ", manufacturingDate=" + manufacturingDate +
+                '}';
     }
 }

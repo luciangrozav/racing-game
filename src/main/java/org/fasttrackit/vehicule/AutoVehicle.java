@@ -7,10 +7,10 @@ public class AutoVehicle extends Vehicle {
    private Engine engine; // clasa- Engine (trebuie sa existe Engine.java)  ;  variabila- engine
 
     // Constructor overloading
-    public AutoVehicle ()
-    {
-        this(new Engine());
-    }
+//    public AutoVehicle ()
+//    {
+//        this(new Engine());
+//    }
 
     public AutoVehicle (Engine engine)  // Constructor
     {
@@ -24,5 +24,12 @@ public class AutoVehicle extends Vehicle {
 
     public void setEngine(Engine engine) {
         this.engine = engine;
+    }
+
+    @Override
+    public String toString() {
+        return "AutoVehicle{" +
+                "engine=" + engine +
+                "} " + super.toString();
     }
 }

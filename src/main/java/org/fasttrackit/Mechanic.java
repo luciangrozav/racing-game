@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import org.fasttrackit.vehicule.AutoVehicle;
+
 public class Mechanic {
 
     public void repair (AutoVehicle autoVehicle) {  // metoda repair nu va returna nimic -> void ;  ii atribui acestei metode un obiect de clasa Autvehicle

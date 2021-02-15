@@ -1,11 +1,14 @@
 package org.fasttrackit;
 
+import org.fasttrackit.vehicule.Car;
+
 public class App
 {
     public static void main( String[] args )
     {
-       Game game = new Game();
-        game.start();
+
+//       Game game = new Game();
+//        game.start();
 
         // invoking overloading methods and constructors
 //        Engine engine = new Engine();
@@ -35,21 +38,23 @@ public class App
 //        autoVehicleEngine.setManufacturer("Vw");
 //        AutoVehicle autoVehicle = new AutoVehicle(autoVehicleEngine); // de acum oricarui Autovehicul ii va fi obligatoriu sa i se instantieze un motor
 //
-//        Engine engine1 = new Engine();  // ai declarat alt engine ; cele 2 engine le declari in clasele AutoVehicle si Car
-//        engine1.setManufacturer("Ferrari");
-//        engine1.setCapacity(5000);
+        Engine engine1 = new Engine();  // ai declarat alt engine ; cele 2 engine le declari in clasele AutoVehicle si Car
+        engine1.setManufacturer("Ferrari");
+        engine1.setCapacity(5000);
 //
 //
-//        Car carReference = new Car(engine1); // prima variabila declarata ; in paranteze introduci variabila engine declarata mai sus
+        Car carReference = new Car(engine1); // prima variabila declarata ; in paranteze introduci variabila engine declarata mai sus
 //
-//       carReference.setName("Ferrari");    // Date FERRARI
-//       carReference.setMaxSpeed(300);
-//        carReference.setFuellevel(60);
-//        carReference.setMileage(12.5);
-//        carReference.setTotalTravelDistance(0);
-//        carReference.setDamaged(false);
-//        carReference.setDoorCount(1);
-//        carReference.setColor("Red");
+       carReference.setName("Ferrari");    // Date FERRARI
+       carReference.setMaxSpeed(300);
+        carReference.setFuellevel(60);
+        carReference.setMileage(12.5);
+        carReference.setTotalTravelDistance(0);
+        carReference.setDamaged(false);
+        carReference.setDoorCount(1);
+        carReference.setColor("Red");
+
+        System.out.println(carReference);
 //
 //
 //     System.out.println("Engine1 capacity " + engine1.getCapacity());
