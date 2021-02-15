@@ -28,7 +28,7 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
         this.maxSpeed = maxSpeed;
     } */
 
-    public double accelerate (double speed)
+    public double accelerate (double speed)  //overloading la metoda accelerate
     {
         return accelerate(speed, 1);
     }

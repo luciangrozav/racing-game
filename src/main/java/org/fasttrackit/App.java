@@ -16,7 +16,7 @@ public class App
 //
 //        new Car();
 //
-//        autovehicle1.accelerate (100);
+//        autovehicle1.accelerate (100);  // metoda accelerate se poate apela in 2 moduri - rolul supraincarcarii
 //        autovehicle1.accelerate (100,3);
 
 
