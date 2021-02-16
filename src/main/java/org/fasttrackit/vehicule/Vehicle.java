@@ -76,6 +76,14 @@ public class Vehicle { //Vehicle este stramos de-al lui Car
 
     }
 
+    protected Vehicle reset()
+    {
+        totalTravelDistance = 0;
+        damaged= false;
+
+        return this;  // returneaza obiectul curent = this
+    }
+
     public void setName(String name)
     {
     this.name = name.trim(); // sterge spatiile de la inceput si sfarsit
