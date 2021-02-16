@@ -4,7 +4,7 @@ import org.fasttrackit.utils.ScannerUtils;
 
 public class Game{
 
-
+//    private Vehicle competitor1, competitor2;  // practic, datorita polimorfismului se pot declara 2 pa
 
     public void start(){  //metoda
 

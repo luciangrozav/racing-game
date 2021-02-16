@@ -10,7 +10,7 @@ public class CheatingVehicle extends Vehicle {  // CheatingVehicle e o subclasa
         System.out.println(getName() + " is accelerating with " + speed + " Km/h for " + durationInHours + " hours");
         System.out.println("Cheater!!!");
 
-        double distance = speed * durationInHours * 2;
+        double distance = speed * durationInHours * 2;  // fizica
         totalTravelDistance += distance;
 
         System.out.println("Total traveled distance for vehicle " + getName() + " : " + totalTravelDistance + " Km");
@@ -29,6 +29,7 @@ public class CheatingVehicle extends Vehicle {  // CheatingVehicle e o subclasa
     public void cheat()
     {
         totalTravelDistance*= 2;
-    }
+        System.out.println("Updated total distance: " + totalTravelDistance);
+    }  // metoda cheat
 
 }
