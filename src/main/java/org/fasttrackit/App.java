@@ -1,23 +1,20 @@
 package org.fasttrackit;
 
-import org.fasttrackit.vehicule.CheatingVehicle;
-import org.fasttrackit.vehicule.Vehicle;
-
 public class App
 {
     public static void main( String[] args )
     {
 
-//       Game game = new Game();
-//        game.start();
+       Game game = new Game();
+        game.start();
 
-        Vehicle cheatingVehicle =  new CheatingVehicle();  // Polimorfismul creste flexibilitatea in dezvoltarea aplicatiei
-        cheatingVehicle.setName("Cheater");
-        cheatingVehicle.accelerate(60);
-
-      if (cheatingVehicle instanceof CheatingVehicle)  // daca cheatingVehicle este o instanta a clasei CheatingVehicle, atunci ii fac typecasting
-       // type casting
-        ((CheatingVehicle)cheatingVehicle).cheat();  // -> trateaza continutul variabilei ca si cum ar fi de tip CheatingVehicle
+//        Vehicle cheatingVehicle =  new CheatingVehicle();  // Polimorfismul creste flexibilitatea in dezvoltarea aplicatiei
+//        cheatingVehicle.setName("Cheater");
+//        cheatingVehicle.accelerate(60);
+//
+//      if (cheatingVehicle instanceof CheatingVehicle)  // daca cheatingVehicle este o instanta a clasei CheatingVehicle, atunci ii fac typecasting
+//       // type casting
+//        ((CheatingVehicle)cheatingVehicle).cheat();  // -> trateaza continutul variabilei ca si cum ar fi de tip CheatingVehicle
 
 //        CheatingVehicle newVar = (CheatingVehicle) cheatingVehicle;
 //        newVar.cheat();                                               // -> echivalent
