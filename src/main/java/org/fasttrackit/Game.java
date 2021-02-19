@@ -39,6 +39,11 @@ public class Game{
         track2.setLength(100);
         tracks[1]=track2;
 
+        Track track3 = new Track();
+        track3.setName("Forrest Circuit");
+        track3.setLength(300);
+        tracks[2]=track3;
+
         displayTracks();
 
     }
