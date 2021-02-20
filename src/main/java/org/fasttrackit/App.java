@@ -4,9 +4,19 @@ public class App
 {
     public static void main( String[] args )
     {
+//        for(int i=0; i< args.length;i++)
+//        {
+//            System.out.println(args[i]);
+//        }
 
        Game game = new Game();
         game.start();
+
+//        String email= "luciangrozav01@gmail.com";
+//        String[] emailParts = email.split("@");
+//
+//        System.out.println("First part: " + emailParts[0]);
+//        System.out.println("Second part: " + emailParts[1]);
 
 //        Vehicle cheatingVehicle =  new CheatingVehicle();  // Polimorfismul creste flexibilitatea in dezvoltarea aplicatiei
 //        cheatingVehicle.setName("Cheater");
