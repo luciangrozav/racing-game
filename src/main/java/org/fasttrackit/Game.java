@@ -1,12 +1,17 @@
 package org.fasttrackit;
 
 import org.fasttrackit.utils.ScannerUtils;
+import org.fasttrackit.vehicule.Vehicle;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Game{
 
 //    private Vehicle competitor1, competitor2;  // practic, datorita polimorfismului se pot declara 2 param
 
     private Track[] tracks = new Track[3];
+    private List<Vehicle>  competitors =  new ArrayList<>();
 
     public void start(){  //metoda
 
@@ -18,14 +23,7 @@ public class Game{
 
         System.out.println("Selected track: " + selectedTrack.getName() + " with the length: " + selectedTrack.getLength());
 
-        int playerCount = getPlayerCountFromUser();
-
-        System.out.println("Nb. of players: " + playerCount);
-
-        String vehicleName = getVehicleNameFromUSer();
-
-        System.out.println("Vehicle name: " + vehicleName);
-
+        initialiseCompetitors();
     }
 
     private void initializeTracks() {
@@ -55,6 +53,34 @@ public class Game{
         for(int i=0; i< tracks.length; i++)
             if(tracks[i] != null)  // altfel da eroare la afisare
             {  System.out.println((i+1) + ". " + tracks[i].getName() + ": " + tracks[i].getLength() + " km"); }
+    }
+
+    private void initialiseCompetitors(){
+
+        int playerCount = getPlayerCountFromUser();
+
+        //System.out.println("Nb. of players: " + playerCount);
+
+        for(int i =1; i< playerCount-1; i++){
+            System.out.println("Preparing player " + i + " for the race");
+            Vehicle vehicle = new Vehicle();
+            vehicle.setName(getVehicleNameFromUSer());
+            vehicle.setFuellevel(30);
+            vehicle.setMaxSpeed(300);
+            vehicle.setMileage(10);
+
+            System.out.println("Fuel level for " + vehicle.getName() + " : " + vehicle.getFuellevel());
+            System.out.println("Max speed for " + vehicle.getName() + " : " + vehicle.getMaxSpeed());
+            System.out.println("Mileage for " + vehicle.getName() + " : " + vehicle.getMileage());
+
+            competitors.add(vehicle);
+
+        }
+
+        String vehicleName = getVehicleNameFromUSer();
+
+        System.out.println("Vehicle name: " + vehicleName);
+
     }
 
 
