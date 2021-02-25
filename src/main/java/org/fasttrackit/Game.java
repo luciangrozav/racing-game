@@ -5,6 +5,7 @@ import org.fasttrackit.vehicule.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Game{
 
@@ -24,6 +25,34 @@ public class Game{
         System.out.println("Selected track: " + selectedTrack.getName() + " with the length: " + selectedTrack.getLength());
 
         initialiseCompetitors();
+
+        playOneRound();
+    }
+
+    private void playOneRound ()
+    {
+        System.out.println("New round.");
+
+//        for (int i=0; i < competitors.size(); i++)
+//        {
+//            Vehicle competitor = competitors.get(i);
+//            System.out.println("It's " + competitor.getName() + "s turn.");
+//
+//            competitor.accelerate(100);
+//        }
+
+        // enhanced for (for-each)
+        for (Vehicle competitor:competitors)
+        {
+            System.out.println("It's " + competitor.getName() + "s turn.");
+
+        competitor.accelerate(100);
+
+        double speed = getAccelerationSpeedFromUser();
+        competitor.accelerate(speed);
+
+        }
+
     }
 
     private void initializeTracks() {
@@ -61,13 +90,14 @@ public class Game{
 
         //System.out.println("Nb. of players: " + playerCount);
 
-        for(int i =1; i< playerCount-1; i++){
+        for(int i =1; i< playerCount-1; i++)
+        {
             System.out.println("Preparing player " + i + " for the race");
             Vehicle vehicle = new Vehicle();
             vehicle.setName(getVehicleNameFromUSer());
             vehicle.setFuellevel(30);
             vehicle.setMaxSpeed(300);
-            vehicle.setMileage(10);
+            vehicle.setMileage(ThreadLocalRandom.current().nextDouble(8,15));
 
             System.out.println("Fuel level for " + vehicle.getName() + " : " + vehicle.getFuellevel());
             System.out.println("Max speed for " + vehicle.getName() + " : " + vehicle.getMaxSpeed());
@@ -103,6 +133,12 @@ public class Game{
         int trackNumber = ScannerUtils.nextIntAndMoveToNextLine();  // citirea din compilator; citire care trebuie sa fie de tip int; 'cin>>' din C++;
 
         return tracks[trackNumber -1]; // -1 pt ca indexul incepe de la zero in array; returneaza obiectul din tracks, cu toate proprietatile lui; (Name si Length)
+    }
+
+    private double getAccelerationSpeedFromUser()
+    {
+        System.out.println("Please enter acceleration speed: ");
+        return ScannerUtils.nextDoubleAndMoveToNextLine();
     }
 
 }
