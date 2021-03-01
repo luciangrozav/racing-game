@@ -1,5 +1,9 @@
 package org.fasttrackit;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 public class App
 {
     public static void main( String[] args )
@@ -9,8 +13,36 @@ public class App
 //            System.out.println(args[i]);
 //        }
 
-       Game game = new Game();
-        game.start();
+//       Game game = new Game();
+//        game.start();
+
+        Set<String> cities = new HashSet<>();  // Set-uri ; LinkedHashSet<>()
+        cities.add("Cluj-Napoca");
+        cities.add("Bucuresti");
+        cities.add("Bucuresti");
+        cities.add("Cluj-Napoca");
+        System.out.println(cities.size());
+
+
+
+        Iterator<String> citiesIterator = cities.iterator();  // pt afisare; la set-uri nu ma pot folosi de metoda 'get' pt afisare
+
+        for (int i=0; i < cities.size(); i++) {
+            String nextCity = citiesIterator.next();
+            System.out.println(nextCity);
+        }
+
+//        while(citiesIterator.hasNext() == true)
+//        {
+//            System.out.println(citiesIterator.next());
+//        }
+
+//
+//        String FirstCity = citiesIterator.next();
+//        String SecondCity = citiesIterator.next();
+//
+//        System.out.println(FirstCity);
+//        System.out.println(SecondCity);
 
 //        List<String> favouriteAuthors = new ArrayList<>();
 //        favouriteAuthors.add("Asimov");
