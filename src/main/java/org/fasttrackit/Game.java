@@ -42,7 +42,7 @@ public class Game{
 //        }
 
         // enhanced for (for-each)
-        for (Vehicle competitor:competitors)
+        for (Vehicle competitor:competitors)  // aici s-a initializat competitor
         {
             System.out.println("It's " + competitor.getName() + "s turn.");
 
@@ -117,7 +117,7 @@ public class Game{
     private int getPlayerCountFromUser()
     {
         System.out.println("Please enter number of players: ");
-        return ScannerUtils.nextIntAndMoveToNextLine();
+        return ScannerUtils.nextIntAndMoveToNextLine();  // cin>>
 
     }
 
@@ -138,7 +138,7 @@ public class Game{
     private double getAccelerationSpeedFromUser()
     {
         System.out.println("Please enter acceleration speed: ");
-        return ScannerUtils.nextDoubleAndMoveToNextLine();
+        return ScannerUtils.nextDoubleAndMoveToNextLine();  // cin>>
     }
 
 }

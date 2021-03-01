@@ -12,6 +12,25 @@ public class App
        Game game = new Game();
         game.start();
 
+//        List<String> favouriteAuthors = new ArrayList<>();
+//        favouriteAuthors.add("Asimov");
+//        favouriteAuthors.add("Nietzsche");
+//        favouriteAuthors.add("Sagan");
+//
+//        System.out.println(favouriteAuthors);
+//
+//        boolean authors = favouriteAuthors.contains("Asimov");
+//        System.out.println(authors);
+//
+//        int[] integers = {1, 2, 3, 4};
+//
+//        // wrapper classes
+//        List <Integer> integerList = Arrays.asList(10, 20, 30);  //auto boxing: primitive data type: 10, 20, 30 -> class/object
+//
+//        int firstNumber = integerList.get(0);  // auto unboxing: class/object: firstNumber -> primitive data type
+//
+//        System.out.println(firstNumber);
+
 //        String email= "luciangrozav01@gmail.com";
 //        String[] emailParts = email.split("@");
 //
