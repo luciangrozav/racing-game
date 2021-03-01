@@ -26,6 +26,7 @@ public class App
 
 
         Iterator<String> citiesIterator = cities.iterator();  // pt afisare; la set-uri nu ma pot folosi de metoda 'get' pt afisare
+        // cities.iterator() il introduc intr-o variabila, pt ca numaratoarea la metoda iterator se reseteaza la fiecare apelare si vrem sa evitam acest lucru;
 
         for (int i=0; i < cities.size(); i++) {
             String nextCity = citiesIterator.next();
