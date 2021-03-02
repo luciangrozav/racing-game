@@ -1,9 +1,5 @@
 package org.fasttrackit;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
 public class App
 {
     public static void main( String[] args )
@@ -13,25 +9,40 @@ public class App
 //            System.out.println(args[i]);
 //        }
 
-//       Game game = new Game();
-//        game.start();
+       Game game = new Game();
+        game.start();
 
-        Set<String> cities = new HashSet<>();  // Set-uri ; LinkedHashSet<>()
-        cities.add("Cluj-Napoca");
-        cities.add("Bucuresti");
-        cities.add("Bucuresti");
-        cities.add("Cluj-Napoca");
-        System.out.println(cities.size());
+//        String userLanguage = "ro";
+//
+//        Map<String, String> descriptionTranslations = new HashMap<>();
+//        descriptionTranslations.put("en","Some description");
+//        descriptionTranslations.put("ro", "Orice descriere");
+//        descriptionTranslations.put("ro", "O alta descriere"); // se face suprascrierea valorii deoarece cheia trebuie sa fie unica;
+//
+//        String description = descriptionTranslations.get(userLanguage);
+//        System.out.println(description);
+//
+//        for(Map.Entry<String, String> entry: descriptionTranslations.entrySet()) {  // enhanced for
+//            System.out.println(entry.getKey() + " : " + entry.getValue());
+//        }
 
 
-
-        Iterator<String> citiesIterator = cities.iterator();  // pt afisare; la set-uri nu ma pot folosi de metoda 'get' pt afisare
-        // cities.iterator() il introduc intr-o variabila, pt ca numaratoarea la metoda iterator se reseteaza la fiecare apelare si vrem sa evitam acest lucru;
-
-        for (int i=0; i < cities.size(); i++) {
-            String nextCity = citiesIterator.next();
-            System.out.println(nextCity);
-        }
+//        Set<String> cities = new HashSet<>();  // Set-uri ; LinkedHashSet<>()
+//        cities.add("Cluj-Napoca");
+//        cities.add("Bucuresti");
+//        cities.add("Bucuresti");
+//        cities.add("Cluj-Napoca");
+//        System.out.println(cities.size());
+//
+//
+//
+//        Iterator<String> citiesIterator = cities.iterator();  // pt afisare; la set-uri nu ma pot folosi de metoda 'get' pt afisare
+//        // cities.iterator() il introduc intr-o variabila, pt ca numaratoarea la metoda iterator se reseteaza la fiecare apelare si vrem sa evitam acest lucru;
+//
+//        for (int i=0; i < cities.size(); i++) {
+//            String nextCity = citiesIterator.next();
+//            System.out.println(nextCity);
+//        }
 
 //        while(citiesIterator.hasNext() == true)
 //        {
