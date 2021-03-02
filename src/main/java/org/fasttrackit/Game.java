@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
 import org.fasttrackit.utils.ScannerUtils;
+import org.fasttrackit.vehicule.Car;
 import org.fasttrackit.vehicule.Vehicle;
 
 import java.util.ArrayList;
@@ -93,7 +94,7 @@ public class Game{
         for(int i =1; i< playerCount-1; i++)
         {
             System.out.println("Preparing player " + i + " for the race");
-            Vehicle vehicle = new Vehicle();
+            Vehicle vehicle = new Car();
             vehicle.setName(getVehicleNameFromUSer());
             vehicle.setFuellevel(30);
             vehicle.setMaxSpeed(300);

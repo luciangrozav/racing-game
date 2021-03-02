@@ -4,7 +4,7 @@ import org.fasttrackit.Engine;
 
 import java.time.LocalDate;
 
-public class Vehicle { //Vehicle este stramos de-al lui Car
+public abstract class Vehicle { //Vehicle este stramos de-al lui Car
 
    private static int totalVehicleCount;  // variabila de clasa / variabila statica
 

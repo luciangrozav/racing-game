@@ -2,7 +2,7 @@ package org.fasttrackit.vehicule;
 
 import org.fasttrackit.Engine;
 
-public class AutoVehicle extends Vehicle {
+public abstract class AutoVehicle extends Vehicle {
 
    private Engine engine; // clasa- Engine (trebuie sa existe Engine.java)  ;  variabila- engine
 
