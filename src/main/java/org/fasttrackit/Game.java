@@ -1,8 +1,8 @@
 package org.fasttrackit;
 
 import org.fasttrackit.utils.ScannerUtils;
-import org.fasttrackit.vehicule.Car;
-import org.fasttrackit.vehicule.Vehicle;
+import org.fasttrackit.competitor.vehicule.Car;
+import org.fasttrackit.competitor.vehicule.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;

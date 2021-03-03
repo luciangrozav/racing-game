@@ -1,6 +1,4 @@
-package org.fasttrackit;
-
-import org.fasttrackit.vehicule.AutoVehicle;
+package org.fasttrackit.competitor.vehicule;
 
 public class Mechanic {
 

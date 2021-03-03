@@ -1,4 +1,4 @@
-package org.fasttrackit.vehicule;
+package org.fasttrackit.competitor.vehicule;
 
 // "is-a" relantionship (inheritance)
 

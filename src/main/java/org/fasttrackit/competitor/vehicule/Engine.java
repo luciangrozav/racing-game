@@ -1,4 +1,4 @@
-package org.fasttrackit;
+package org.fasttrackit.competitor.vehicule;
 
 public class Engine {
 
