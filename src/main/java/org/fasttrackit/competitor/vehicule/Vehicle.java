@@ -1,8 +1,10 @@
 package org.fasttrackit.competitor.vehicule;
 
+import org.fasttrackit.competitor.Mobile;
+
 import java.time.LocalDate;
 
-public abstract class Vehicle { //Vehicle este stramos de-al lui Car
+public abstract class Vehicle implements Mobile { //Vehicle este stramos de-al lui Car
 
    private static int totalVehicleCount;  // variabila de clasa / variabila statica
 
@@ -21,9 +23,14 @@ public abstract class Vehicle { //Vehicle este stramos de-al lui Car
         totalVehicleCount++;
     }
 
-    public Vehicle(Engine engine) {
-
+    @Override
+    public boolean canMove() {
+        return fuellevel>0 && !damaged;
     }
+
+    //    public Vehicle(Engine engine) {
+//
+//    }
 
     /* public Vehicle(String name, double fuellevel, double mileage, double maxSpeed) {    // exemplu de alt constructor;
         this.name = name;                                                                 // Si in Autovehicle si Car trebuie definiti dupa, pt ca Vehicle este stramos
@@ -39,8 +46,9 @@ public abstract class Vehicle { //Vehicle este stramos de-al lui Car
 
     public double accelerate (double speed, double durationInHours) {  // accelerate= metoda -> reprezinta o actiune, un verb-accelerare; speed, durationInHours- parametrii
 
-        if (fuellevel <= 0 || damaged) { // se inteteste povestea aplicatiei, ii creste complexitatea, conditiile
+        if (!canMove()) { // se inteteste povestea aplicatiei, ii creste complexitatea, conditiile
             System.out.println("You cannot accelerate");
+            return 0;
         }
         if (speed > maxSpeed)
         {

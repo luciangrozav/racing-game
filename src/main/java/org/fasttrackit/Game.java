@@ -1,5 +1,6 @@
 package org.fasttrackit;
 
+import org.fasttrackit.competitor.Mobile;
 import org.fasttrackit.utils.ScannerUtils;
 import org.fasttrackit.competitor.vehicule.Car;
 import org.fasttrackit.competitor.vehicule.Vehicle;
@@ -13,7 +14,7 @@ public class Game{
 //    private Vehicle competitor1, competitor2;  // practic, datorita polimorfismului se pot declara 2 param
 
     private Track[] tracks = new Track[3];
-    private List<Vehicle>  competitors =  new ArrayList<>();
+    private List<Mobile>  competitors =  new ArrayList<>();
 
     public void start(){  //metoda
 
@@ -43,14 +44,13 @@ public class Game{
 //        }
 
         // enhanced for (for-each)
-        for (Vehicle competitor:competitors)  // aici s-a initializat competitor
+        for (Mobile competitor:competitors)  // aici s-a initializat competitor
         {
             System.out.println("It's " + competitor.getName() + "s turn.");
 
-        competitor.accelerate(100);
 
         double speed = getAccelerationSpeedFromUser();
-        competitor.accelerate(speed);
+        competitor.accelerate(speed, 1);
 
         }
 
