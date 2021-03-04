@@ -1,5 +1,6 @@
 package org.fasttrackit.competitor;
 
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Hulk implements  Mobile {
@@ -21,6 +22,8 @@ public class Hulk implements  Mobile {
 
         double distance = speed * durationInHours;
         totalTravelDistance+=distance;
+
+        return distance;
     }
 
     @Override
@@ -36,5 +39,18 @@ public class Hulk implements  Mobile {
     @Override
     public String getName() {
         return "Hulk";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hulk hulk = (Hulk) o;
+        return Double.compare(hulk.totalTravelDistance, totalTravelDistance) == 0 && cooperative == hulk.cooperative;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(totalTravelDistance, cooperative);
     }
 }

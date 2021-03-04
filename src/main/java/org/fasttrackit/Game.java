@@ -6,7 +6,9 @@ import org.fasttrackit.competitor.vehicule.Car;
 import org.fasttrackit.competitor.vehicule.Vehicle;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Game{
@@ -15,6 +17,9 @@ public class Game{
 
     private Track[] tracks = new Track[3];
     private List<Mobile>  competitors =  new ArrayList<>();
+    private Set<Mobile> outOfRaceCompetitors = new HashSet<>();
+    private boolean winnerNotKnown=true;
+    private Track selectedTrack;
 
     public void start(){  //metoda
 
@@ -22,12 +27,20 @@ public class Game{
 
         initializeTracks();
 
-        Track selectedTrack = getSelectedTrackFromUser(); // pt ca metoda getSelectedTrackFromUser returneaza o variabila Track (din lista array)
+        selectedTrack = getSelectedTrackFromUser(); // pt ca metoda getSelectedTrackFromUser returneaza o variabila Track (din lista array)
 
         System.out.println("Selected track: " + selectedTrack.getName() + " with the length: " + selectedTrack.getLength());
 
         initialiseCompetitors();
 
+        loopRounds();
+
+
+    }
+
+    private void loopRounds()
+    {
+        while ((winnerNotKnown) && (outOfRaceCompetitors.size() < competitors.size()))
         playOneRound();
     }
 
@@ -48,10 +61,23 @@ public class Game{
         {
             System.out.println("It's " + competitor.getName() + "s turn.");
 
+            if(!competitor.canMove())
+            {
+                System.out.println("Sorry, you cannot continue the race..");
+                outOfRaceCompetitors.add(competitor);
+                continue;
+            }
+
 
         double speed = getAccelerationSpeedFromUser();
         competitor.accelerate(speed, 1);
 
+        if(competitor.getTotalTravelDistance() >= selectedTrack.getLength())
+        {
+            System.out.println("The winner is: " + competitor.getName());
+            winnerNotKnown=false;
+            break;
+        }
         }
 
     }
@@ -88,25 +114,25 @@ public class Game{
     private void initialiseCompetitors(){
 
         int playerCount = getPlayerCountFromUser();
+        int i;
+        System.out.println("Nb. of players: " + playerCount);
 
-        //System.out.println("Nb. of players: " + playerCount);
+        for( i =1; i<= playerCount; i++) {
 
-        for(int i =1; i< playerCount-1; i++)
-        {
             System.out.println("Preparing player " + i + " for the race");
             Vehicle vehicle = new Car();
             vehicle.setName(getVehicleNameFromUSer());
             vehicle.setFuellevel(30);
             vehicle.setMaxSpeed(300);
-            vehicle.setMileage(ThreadLocalRandom.current().nextDouble(8,15));
+            vehicle.setMileage(ThreadLocalRandom.current().nextDouble(8, 15));
 
             System.out.println("Fuel level for " + vehicle.getName() + " : " + vehicle.getFuellevel());
             System.out.println("Max speed for " + vehicle.getName() + " : " + vehicle.getMaxSpeed());
             System.out.println("Mileage for " + vehicle.getName() + " : " + vehicle.getMileage());
 
             competitors.add(vehicle);
-
         }
+
 
         String vehicleName = getVehicleNameFromUSer();
 

@@ -1,5 +1,7 @@
 package org.fasttrackit.competitor.vehicule;
 
+import java.util.Objects;
+
 public class Engine {
 
     private String manufacturer;
@@ -19,5 +21,7 @@ public class Engine {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
     }
 }
