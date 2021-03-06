@@ -18,7 +18,7 @@ public class Game{
     private boolean winnerNotKnown=true;
     private Track selectedTrack;
 
-    public void start() throws Exception {  //metoda
+    public void start() throws Exception {  //metoda ; Exception este tratat
 
         System.out.println("Welcome to the racing game!");
 
@@ -152,7 +152,7 @@ public class Game{
         return ScannerUtils.nextLine();
     }
 
-    private Track getSelectedTrackFromUser() throws Exception {
+    private Track getSelectedTrackFromUser() throws Exception { // Exception este tratat de catre programator
         System.out.println("Please select a track: ");
 
         try {
