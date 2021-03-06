@@ -2,11 +2,10 @@ package org.fasttrackit;
 
 public class App
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws Exception {
 //
-//       Game game = new Game();
-//        game.start();
+       Game game = new Game();
+        game.start();
 
 //        // String pool
 //        String a = "test";

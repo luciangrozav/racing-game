@@ -1,7 +1,5 @@
 package org.fasttrackit.competitor.vehicule;
 
-import java.util.Objects;
-
 public class Engine {
 
     private String manufacturer;
@@ -24,4 +22,4 @@ public class Engine {
     }
 
     }
-}
+

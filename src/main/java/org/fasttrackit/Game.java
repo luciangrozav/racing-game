@@ -1,14 +1,11 @@
 package org.fasttrackit;
 
 import org.fasttrackit.competitor.Mobile;
-import org.fasttrackit.utils.ScannerUtils;
 import org.fasttrackit.competitor.vehicule.Car;
 import org.fasttrackit.competitor.vehicule.Vehicle;
+import org.fasttrackit.utils.ScannerUtils;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Game{
@@ -21,7 +18,7 @@ public class Game{
     private boolean winnerNotKnown=true;
     private Track selectedTrack;
 
-    public void start(){  //metoda
+    public void start() throws Exception {  //metoda
 
         System.out.println("Welcome to the racing game!");
 
@@ -130,13 +127,14 @@ public class Game{
             System.out.println("Max speed for " + vehicle.getName() + " : " + vehicle.getMaxSpeed());
             System.out.println("Mileage for " + vehicle.getName() + " : " + vehicle.getMileage());
 
-            competitors.add(vehicle);
-        }
+            competitors.add(vehicle); }
 
 
-        String vehicleName = getVehicleNameFromUSer();
 
-        System.out.println("Vehicle name: " + vehicleName);
+
+//        String vehicleName = getVehicleNameFromUSer();
+//
+//        System.out.println("Vehicle name: " + vehicleName);
 
     }
 
@@ -154,12 +152,22 @@ public class Game{
         return ScannerUtils.nextLine();
     }
 
-    private Track getSelectedTrackFromUser()
-    {
+    private Track getSelectedTrackFromUser() throws Exception {
         System.out.println("Please select a track: ");
-        int trackNumber = ScannerUtils.nextIntAndMoveToNextLine();  // citirea din compilator; citire care trebuie sa fie de tip int; 'cin>>' din C++;
 
-        return tracks[trackNumber -1]; // -1 pt ca indexul incepe de la zero in array; returneaza obiectul din tracks, cu toate proprietatile lui; (Name si Length)
+        try {
+            int trackNumber = ScannerUtils.nextIntAndMoveToNextLine();  // citirea din compilator; citire care trebuie sa fie de tip int; 'cin>>' din C++;
+
+            return tracks[trackNumber - 1]; // -1 pt ca indexul incepe de la zero in array; returneaza obiectul din tracks, cu toate proprietatile lui; (Name si Length)
+
+        } catch (InputMismatchException e) {
+
+            throw new Exception("You have entered an invalid value!");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new RuntimeException("You have entered an invalid number!"); // Unchecked exception, deci nu trebuie tratata
+        } finally {
+            System.out.println("Finally bloc is always executed!");
+        }
     }
 
     private double getAccelerationSpeedFromUser()
