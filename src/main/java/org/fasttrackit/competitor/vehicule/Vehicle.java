@@ -57,7 +57,7 @@ public abstract class Vehicle implements Mobile { //Vehicle este stramos de-al l
             return 0;  //
         } else if (speed== maxSpeed) {
             System.out.println("Careful! Maxspeed reached!");
-        } else {
+        } else if (speed < maxSpeed){
             System.out.println("Valid speed");
         }
 
