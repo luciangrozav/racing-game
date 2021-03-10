@@ -1,8 +1,11 @@
 package org.fasttrackit;
 
 import org.fasttrackit.competitor.Mobile;
+import org.fasttrackit.competitor.MobileComparator;
 import org.fasttrackit.competitor.vehicule.Car;
 import org.fasttrackit.competitor.vehicule.Vehicle;
+import org.fasttrackit.persistency.FileRankingRepository;
+import org.fasttrackit.persistency.RankingsRepository;
 import org.fasttrackit.utils.ScannerUtils;
 
 import java.util.*;
@@ -18,6 +21,8 @@ public class Game {
     private boolean winnerNotKnown = true;
     private Track selectedTrack;
 
+    private RankingsRepository rankingsRepository = new FileRankingRepository();
+
     public void start() throws Exception {  //metoda ; Exception este tratat
 
         System.out.println("Welcome to the racing game!");
@@ -31,9 +36,25 @@ public class Game {
         initialiseCompetitors();
 
         loopRounds();
+        processRankings();
 
 
     }
+
+    private void processRankings() {
+        competitors.sort(Collections.reverseOrder(new MobileComparator()));
+
+        System.out.println("Rankings:");
+
+        for (int i = 0; i < competitors.size(); i++)
+        { System.out.println((i + 1) + ". " + competitors.get(i).getName() + ": " + competitors.get(i).getTotalTravelDistance() + " km");
+
+        rankingsRepository.addRankingItem(i+1, competitors.get(i).getName(), competitors.get(i).getTotalTravelDistance());}
+
+    rankingsRepository.close();
+    }
+
+
 
     private void loopRounds() {
         while ((winnerNotKnown) && (outOfRaceCompetitors.size() < competitors.size()))
