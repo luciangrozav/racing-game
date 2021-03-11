@@ -1,4 +1,4 @@
-package org.fasttrackit.utils;
+package org.fasttrackit.controller.utils;
 
 import java.util.Scanner;
 

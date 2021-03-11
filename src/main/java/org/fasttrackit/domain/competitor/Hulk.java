@@ -1,4 +1,4 @@
-package org.fasttrackit.competitor;
+package org.fasttrackit.domain.competitor;
 
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;

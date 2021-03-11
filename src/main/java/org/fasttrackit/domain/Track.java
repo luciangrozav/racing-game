@@ -1,4 +1,4 @@
-package org.fasttrackit;
+package org.fasttrackit.domain;
 
 public class Track {  // am adaugat conceptul de circuit in aplicatie
 

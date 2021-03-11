@@ -1,4 +1,4 @@
-package org.fasttrackit.competitor;
+package org.fasttrackit.domain.competitor;
 
 public interface Mobile {
 

@@ -1,6 +1,6 @@
-package org.fasttrackit.competitor.vehicule;
+package org.fasttrackit.domain.competitor.vehicule;
 
-import org.fasttrackit.competitor.Mobile;
+import org.fasttrackit.domain.competitor.Mobile;
 
 import java.time.LocalDate;
 import java.util.Objects;

@@ -1,12 +1,15 @@
-package org.fasttrackit;
+package org.fasttrackit.service;
 
-import org.fasttrackit.competitor.Mobile;
-import org.fasttrackit.competitor.MobileComparator;
-import org.fasttrackit.competitor.vehicule.Car;
-import org.fasttrackit.competitor.vehicule.Vehicle;
+import org.fasttrackit.controller.StdinController;
+import org.fasttrackit.controller.UserInputController;
+import org.fasttrackit.domain.Track;
+import org.fasttrackit.domain.competitor.Mobile;
+import org.fasttrackit.domain.competitor.MobileComparator;
+import org.fasttrackit.domain.competitor.vehicule.Car;
+import org.fasttrackit.domain.competitor.vehicule.Vehicle;
 import org.fasttrackit.persistency.FileRankingRepository;
 import org.fasttrackit.persistency.RankingsRepository;
-import org.fasttrackit.utils.ScannerUtils;
+import org.fasttrackit.controller.utils.ScannerUtils;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -20,6 +23,8 @@ public class Game {
     private Set<Mobile> outOfRaceCompetitors = new HashSet<>();
     private boolean winnerNotKnown = true;
     private Track selectedTrack;
+
+    private UserInputController userInputController = new StdinController();
 
     private RankingsRepository rankingsRepository = new FileRankingRepository();
 
@@ -129,7 +134,7 @@ public class Game {
 
     private void initialiseCompetitors() {
 
-        int playerCount = getPlayerCountFromUser();
+        int playerCount = userInputController.getPlayerCount();
         int i;
         System.out.println("Nb. of players: " + playerCount);
 
@@ -137,7 +142,7 @@ public class Game {
 
             System.out.println("Preparing player " + i + " for the race");
             Vehicle vehicle = new Car();
-            vehicle.setName(getVehicleNameFromUSer());
+            vehicle.setName(userInputController.getVehicleName());
             vehicle.setFuellevel(30);
             vehicle.setMaxSpeed(300);
             vehicle.setMileage(ThreadLocalRandom.current().nextDouble(8, 15));
@@ -169,10 +174,9 @@ public class Game {
     }
 
     private Track getSelectedTrackFromUser() throws Exception { // Exception este tratat de catre programator
-        System.out.println("Please select a track: ");
 
         try {
-            int trackNumber = ScannerUtils.nextIntAndMoveToNextLine();  // citirea din compilator; citire care trebuie sa fie de tip int; 'cin>>' din C++;
+            int trackNumber = userInputController.getSelectedTrack();  // citirea din compilator; citire care trebuie sa fie de tip int; 'cin>>' din C++;
 
             return tracks[trackNumber - 1]; // -1 pt ca indexul incepe de la zero in array; returneaza obiectul din tracks, cu toate proprietatile lui; (Name si Length)
 
@@ -188,9 +192,9 @@ public class Game {
     }
 
     private double getAccelerationSpeedFromUser() {
-        System.out.println("Please enter acceleration speed: ");
+
         try {
-            return ScannerUtils.nextDoubleAndMoveToNextLine();  // cin>>
+            return userInputController.getAccelerationSpeed();  // cin>>
         } catch (InputMismatchException e) {
             System.out.println("Invalid value. Please try again.");
             return getAccelerationSpeedFromUser(); // recursivitate- o functie se apeleaza pe ea insasi

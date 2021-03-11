@@ -1,4 +1,4 @@
-package org.fasttrackit.competitor.vehicule;
+package org.fasttrackit.domain.competitor.vehicule;
 
 public class CheatingVehicle extends Vehicle {  // CheatingVehicle e o subclasa
 
