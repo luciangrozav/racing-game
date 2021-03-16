@@ -2,6 +2,8 @@ package org.fasttrackit.controller;
 
 public interface UserInputController {
 
+    // tot ce citim de la tastatura
+
     int getPlayerCount();
 
     String getVehicleName();
@@ -9,5 +11,7 @@ public interface UserInputController {
     int getSelectedTrack();
 
     double getAccelerationSpeed();
+
+    int getCompetitorType();
 
 }

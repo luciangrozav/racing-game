@@ -2,14 +2,16 @@ package org.fasttrackit.service;
 
 import org.fasttrackit.controller.StdinController;
 import org.fasttrackit.controller.UserInputController;
+import org.fasttrackit.controller.utils.ScannerUtils;
 import org.fasttrackit.domain.Track;
+import org.fasttrackit.domain.competitor.Hulk;
 import org.fasttrackit.domain.competitor.Mobile;
 import org.fasttrackit.domain.competitor.MobileComparator;
 import org.fasttrackit.domain.competitor.vehicule.Car;
+import org.fasttrackit.domain.competitor.vehicule.CheatingVehicle;
 import org.fasttrackit.domain.competitor.vehicule.Vehicle;
 import org.fasttrackit.persistency.FileRankingRepository;
 import org.fasttrackit.persistency.RankingsRepository;
-import org.fasttrackit.controller.utils.ScannerUtils;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -24,7 +26,7 @@ public class Game {
     private boolean winnerNotKnown = true;
     private Track selectedTrack;
 
-    private UserInputController userInputController = new StdinController();
+    private UserInputController userInputController = new StdinController(); // obiect interfata - new clasa
 
     private RankingsRepository rankingsRepository = new FileRankingRepository();
 
@@ -47,6 +49,7 @@ public class Game {
     }
 
     private void processRankings() {
+
         competitors.sort(Collections.reverseOrder(new MobileComparator()));
 
         System.out.println("Rankings:");
@@ -141,17 +144,9 @@ public class Game {
         for (i = 1; i <= playerCount; i++) {
 
             System.out.println("Preparing player " + i + " for the race");
-            Vehicle vehicle = new Car();
-            vehicle.setName(userInputController.getVehicleName());
-            vehicle.setFuellevel(30);
-            vehicle.setMaxSpeed(300);
-            vehicle.setMileage(ThreadLocalRandom.current().nextDouble(8, 15));
+           Mobile mobile = createCompetitor();
 
-            System.out.println("Fuel level for " + vehicle.getName() + " : " + vehicle.getFuellevel());
-            System.out.println("Max speed for " + vehicle.getName() + " : " + vehicle.getMaxSpeed());
-            System.out.println("Mileage for " + vehicle.getName() + " : " + vehicle.getMileage());
-
-            competitors.add(vehicle);
+            competitors.add(mobile);
         }
 
 
@@ -159,6 +154,56 @@ public class Game {
 //
 //        System.out.println("Vehicle name: " + vehicleName);
 
+    }
+
+    private void displayCompetitorTypes (){
+
+        System.out.println("How do you like to enter the race?");
+        System.out.println("1. Using a car");
+        System.out.println("2. I feel lucky, I'll try Hulk");
+
+    }
+
+    private Mobile createCompetitor(){
+
+        displayCompetitorTypes();
+
+        int competitorType = userInputController.getCompetitorType();
+
+     switch (competitorType)
+     {
+         case 1:
+             Car car = new Car();
+             setCommonVehicleProperties(car);
+             return car;
+
+         case 2:
+             System.out.println("Hulk is here!");
+             return new Hulk();
+
+         case 0:
+             CheatingVehicle cheatingVehicle = new CheatingVehicle();
+             setCommonVehicleProperties(cheatingVehicle);
+             return cheatingVehicle;
+
+         default:
+             System.out.println("Please select a valid option");
+             return createCompetitor(); // recursivitate
+     }
+
+
+    }
+
+    private void setCommonVehicleProperties( Vehicle vehicle ) {
+
+        vehicle.setName(userInputController.getVehicleName());
+        vehicle.setFuellevel(30);
+        vehicle.setMaxSpeed(300);
+        vehicle.setMileage(ThreadLocalRandom.current().nextDouble(8, 15));
+
+        System.out.println("Fuel level for " + vehicle.getName() + " : " + vehicle.getFuellevel());
+        System.out.println("Max speed for " + vehicle.getName() + " : " + vehicle.getMaxSpeed());
+        System.out.println("Mileage for " + vehicle.getName() + " : " + vehicle.getMileage());
     }
 
 
