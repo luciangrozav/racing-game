@@ -32,13 +32,14 @@ public class Game {
 
     public void start() throws Exception {  //metoda ; Exception este tratat
 
-        System.out.println("Welcome to the racing game!");
+        System.out.println("Welcome to the \"Racing game!\" \u26D0\n");
 
         initializeTracks();
 
         selectedTrack = getSelectedTrackFromUser(); // pt ca metoda getSelectedTrackFromUser returneaza o variabila Track (din lista array)
 
         System.out.println("Selected track: " + selectedTrack.getName() + " with the length: " + selectedTrack.getLength());
+        System.out.println();
 
         initialiseCompetitors();
 
@@ -83,6 +84,7 @@ public class Game {
         // enhanced for (for-each)
         for (Mobile competitor : competitors)  // aici s-a initializat competitor
         {
+            System.out.println();
             System.out.println("It's " + competitor.getName() + "s turn.");
 
             if (!competitor.canMove()) {
@@ -96,7 +98,9 @@ public class Game {
             competitor.accelerate(speed, 1);
 
             if (competitor.getTotalTravelDistance() >= selectedTrack.getLength()) {
+                System.out.println();
                 System.out.println("The winner is: " + competitor.getName());
+                System.out.println();
                 winnerNotKnown = false;
                 break;
             }
@@ -133,6 +137,7 @@ public class Game {
             {
                 System.out.println((i + 1) + ". " + tracks[i].getName() + ": " + tracks[i].getLength() + " km");
             }
+        System.out.println();
     }
 
     private void initialiseCompetitors() {
@@ -140,6 +145,7 @@ public class Game {
         int playerCount = userInputController.getPlayerCount();
         int i;
         System.out.println("Nb. of players: " + playerCount);
+        System.out.println();
 
         for (i = 1; i <= playerCount; i++) {
 
@@ -158,6 +164,7 @@ public class Game {
 
     private void displayCompetitorTypes (){
 
+        System.out.println();
         System.out.println("How do you like to enter the race?");
         System.out.println("1. Using a car");
         System.out.println("2. I feel lucky, I'll try Hulk");
@@ -190,8 +197,6 @@ public class Game {
              System.out.println("Please select a valid option");
              return createCompetitor(); // recursivitate
      }
-
-
     }
 
     private void setCommonVehicleProperties( Vehicle vehicle ) {
@@ -204,6 +209,7 @@ public class Game {
         System.out.println("Fuel level for " + vehicle.getName() + " : " + vehicle.getFuellevel());
         System.out.println("Max speed for " + vehicle.getName() + " : " + vehicle.getMaxSpeed());
         System.out.println("Mileage for " + vehicle.getName() + " : " + vehicle.getMileage());
+        System.out.println();
     }
 
 
